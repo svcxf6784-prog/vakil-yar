@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وکیل‌یار | دستیار حقوقی هوشمند</title>
+<style>
+body{margin:0;font-family:Tahoma,sans-serif;background:#f1f5f9;color:#172554}
+header{background:#123b6d;color:white;padding:24px 16px;text-align:center}
+header h1{margin:0 0 8px}
+main{max-width:650px;margin:25px auto;padding:16px}
+.card{background:white;border-radius:16px;padding:20px;box-shadow:0 5px 20px #0001}
+label{display:block;margin:15px 0 8px}
+select,textarea,button{box-sizing:border-box;width:100%;padding:13px;border-radius:10px;font:inherit}
+select,textarea{border:1px solid #cbd5e1;background:white}
+textarea{min-height:130px;resize:vertical}
+button{border:0;background:#147d64;color:white;margin-top:14px;cursor:pointer}
+.note{font-size:13px;line-height:2;color:#64748b}
+footer{text-align:center;padding:20px;color:#64748b;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+<h1>⚖️ وکیل‌یار</h1>
+<div>دستیار حقوقی هوشمند فارسی</div>
+</header>
+<main>
+<div class="card">
+<h2>چطور می‌توانم راهنمایی‌ات کنم؟</h2>
+<label for="topic">موضوع پرسش</label>
+<select id="topic">
+<option>مشاوره عمومی حقوقی</option>
+<option>قراردادها</option>
+<option>خانواده</option>
+<option>امور کیفری</option>
+<option>امور ملکی</option>
+<option>قانون کار</option>
+</select>
+<label for="question">پرسش خود را بنویسید</label>
+<textarea id="question" placeholder="سؤال حقوقی خود را اینجا وارد کنید..."></textarea>
+<button onclick="reply()">ثبت پرسش</button>
+<div id="answer" aria-live="polite"></div>
+<p class="note">این نسخه نمایشی است و هنوز به هوش مصنوعی یا پایگاه قوانین متصل نیست. پاسخ حقوقی قطعی نیست و برای تصمیم‌های مهم باید با وکیل متخصص مشورت کنید.</p>
+</div>
+</main>
+<footer>وکیل‌یار © دستیار حقوقی فارسی</footer>
+<script>
+function reply(){
+const q=document.getElementById('question').value.trim();
+const topic=document.getElementById('topic').value;
+const a=document.getElementById('answer');
+if(!q){a.textContent='لطفاً ابتدا پرسش خود را بنویسید.';return;}
+a.textContent='پرسش شما در موضوع «'+topic+'» ثبت شد. برای دریافت پاسخ هوشمند، ابتدا باید سرویس هوش مصنوعی به وکیل‌یار متصل شود.';
+}
+</script>
+</body>
+</html>
